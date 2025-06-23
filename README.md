@@ -1,32 +1,32 @@
 # Análise de Fatores de Desempenho no ENEM e API de Predição de Notas
 
-![Banner com um dos gráficos do projeto, como o boxplot de Renda vs. Nota]
+![alt text](image.png)
 
 ## 📖 Visão Geral do Projeto (O "Elevator Pitch")
 
-Este projeto realiza uma análise completa dos microdados do ENEM 2023 para identificar os principais fatores socioeconômicos e demográficos que influenciam o desempenho dos estudantes, com foco na nota de Matemática. [cite_start]O entregável final é uma API RESTful, desenvolvida com Flask, capaz de prever a nota de um aluno com base em seu perfil, demonstrando um ciclo completo de um projeto de ciência de dados, desde a manipulação de dados em larga escala até o deploy de um modelo preditivo. 
+Este projeto realiza uma análise completa dos microdados do ENEM 2023 para identificar os principais fatores socioeconômicos e demográficos que influenciam o desempenho dos estudantes, com foco na nota de Matemática. O entregável final é uma API RESTful, desenvolvida com Flask, capaz de prever a nota de um aluno com base em seu perfil, demonstrando um ciclo completo de um projeto de ciência de dados, desde a manipulação de dados em larga escala até o deploy de um modelo preditivo. 
 
 ## 🎯 Objetivos e Perguntas de Negócio
 
-[cite_start]O projeto foi guiado pelas seguintes questões de negócio: 
-* [cite_start]Quais são os principais fatores (socioeconômicos, demográficos, escolares) que influenciam o desempenho dos estudantes no ENEM? 
-* [cite_start]É possível construir um modelo de Machine Learning que estime a nota de matemática de um aluno com base em seu perfil? 
-* [cite_start]Qual a correlação entre a renda familiar e o desempenho no exame? 
-* [cite_start]Alunos de escolas privadas apresentam, em média, um desempenho superior ao de alunos de escolas públicas? 
+O projeto foi guiado pelas seguintes questões de negócio: 
+* Quais são os principais fatores (socioeconômicos, demográficos, escolares) que influenciam o desempenho dos estudantes no ENEM? 
+* É possível construir um modelo de Machine Learning que estime a nota de matemática de um aluno com base em seu perfil? 
+* Qual a correlação entre a renda familiar e o desempenho no exame? 
+* Alunos de escolas privadas apresentam, em média, um desempenho superior ao de alunos de escolas públicas? 
 
 ## 📊 Fontes de Dados
 
-* [cite_start]**Principal:** Microdados do Exame Nacional do Ensino Médio (ENEM) de 2023, disponibilizados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). 
-* [cite_start]**Documentação de Apoio:** Dicionário de Variáveis e documentos auxiliares fornecidos pelo Inep. 
+* **Principal:** Microdados do Exame Nacional do Ensino Médio (ENEM) de 2023, disponibilizados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). 
+* **Documentação de Apoio:** Dicionário de Variáveis e documentos auxiliares fornecidos pelo Inep. 
 
 ## 🛠️ Metodologia
 
-[cite_start]O projeto foi estruturado seguindo as melhores práticas de um fluxo de trabalho de Ciência de Dados: 
-1.  [cite_start]**Coleta e Limpeza de Dados:** Foi utilizada a biblioteca Pandas para processar o grande volume de dados (milhões de linhas), aplicando a técnica de leitura em *chunks* para otimização de memória.  A limpeza envolveu o tratamento de dados ausentes, focando em um subconjunto de dados de participantes presentes em todas as provas.
-2.  [cite_start]**Análise Exploratória de Dados (EDA):** Geração de visualizações com Seaborn e Matplotlib para investigar a distribuição das notas e a relação entre as variáveis socioeconômicas e o desempenho, respondendo às perguntas de negócio. 
+O projeto foi estruturado seguindo as melhores práticas de um fluxo de trabalho de Ciência de Dados: 
+1.  **Coleta e Limpeza de Dados:** Foi utilizada a biblioteca Pandas para processar o grande volume de dados (milhões de linhas), aplicando a técnica de leitura em *chunks* para otimização de memória.  A limpeza envolveu o tratamento de dados ausentes, focando em um subconjunto de dados de participantes presentes em todas as provas.
+2.  **Análise Exploratória de Dados (EDA):** Geração de visualizações com Seaborn e Matplotlib para investigar a distribuição das notas e a relação entre as variáveis socioeconômicas e o desempenho, respondendo às perguntas de negócio. 
 3.  **Engenharia de Features:** Transformação de variáveis categóricas em um formato numérico utilizando a técnica de One-Hot Encoding (`pd.get_dummies`) para preparar os dados para a modelagem.
-4.  **Modelagem e Avaliação:** Treinamento de um modelo de regressão `LightGBM` para prever a nota de matemática. [cite_start]O modelo foi avaliado utilizando as métricas RMSE (Raiz do Erro Quadrático Médio) e R² (Coeficiente de Determinação). 
-5.  [cite_start]**Deploy:** O modelo treinado foi salvo e exposto através de uma API RESTful simples construída com o micro-framework Flask, capaz de receber dados de um aluno e retornar a predição da nota. 
+4.  **Modelagem e Avaliação:** Treinamento de um modelo de regressão `LightGBM` para prever a nota de matemática. O modelo foi avaliado utilizando as métricas RMSE (Raiz do Erro Quadrático Médio) e R² (Coeficiente de Determinação). 
+5.  **Deploy:** O modelo treinado foi salvo e exposto através de uma API RESTful simples construída com o micro-framework Flask, capaz de receber dados de um aluno e retornar a predição da nota. 
 
 ## 📈 Resultados e Insights
 
@@ -34,11 +34,11 @@ A análise exploratória revelou insights significativos sobre a desigualdade no
 * **Impacto da Renda:** Há uma correlação positiva e clara entre a renda familiar (`Q006`) e a nota de matemática. Alunos de famílias com maior renda tendem a ter um desempenho substancialmente melhor.
 * **Impacto do Tipo de Escola:** A disparidade de desempenho entre escolas públicas e privadas é gritante. A mediana das notas de alunos de escolas privadas é superior ao terceiro quartil (75%) dos alunos de escolas públicas.
 
-[cite_start]*(**Sua Ação Aqui:** Insira os gráficos de boxplot mais impactantes que você gerou, como Renda vs. Nota e Tipo de Escola vs. Nota. O GitHub aceita que você arraste e solte as imagens no editor de texto.)* 
+*(**Sua Ação Aqui:** Insira os gráficos de boxplot mais impactantes que você gerou, como Renda vs. Nota e Tipo de Escola vs. Nota. O GitHub aceita que você arraste e solte as imagens no editor de texto.)* 
 
 ## 📁 Estrutura do Repositório
 
-[cite_start]O projeto está organizado da seguinte forma para facilitar a navegação e reprodutibilidade:
+O projeto está organizado da seguinte forma para facilitar a navegação e reprodutibilidade:
 
 ├── app/                  # Contém o código da API Flask (app.py)
 ├── data/                 # Destinado aos dados (ignorado pelo .gitignore)
