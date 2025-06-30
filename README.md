@@ -34,8 +34,6 @@ A análise exploratória revelou insights significativos sobre a desigualdade no
 * **Impacto da Renda:** Há uma correlação positiva e clara entre a renda familiar (`Q006`) e a nota de matemática. Alunos de famílias com maior renda tendem a ter um desempenho substancialmente melhor.
 * **Impacto do Tipo de Escola:** A disparidade de desempenho entre escolas públicas e privadas é gritante. A mediana das notas de alunos de escolas privadas é superior ao terceiro quartil (75%) dos alunos de escolas públicas.
 
-*(**Sua Ação Aqui:** Insira os gráficos de boxplot mais impactantes que você gerou, como Renda vs. Nota e Tipo de Escola vs. Nota. O GitHub aceita que você arraste e solte as imagens no editor de texto.)* 
-
 ## 📁 Estrutura do Repositório
 
 O projeto está organizado da seguinte forma para facilitar a navegação e reprodutibilidade:
@@ -80,7 +78,6 @@ Para executar este projeto localmente, siga os passos abaixo:
 
 ## 🤔 Limitações e Próximos Passos
 
-Demonstrar pensamento crítico é um grande diferencial. 
 * **Limitações:** O modelo atual utiliza um subconjunto das features disponíveis. Muitas informações do questionário socioeconômico não foram incluídas nesta primeira versão. 
 * **Próximos Passos:** 
     * **Feature Engineering Avançada:** Testar outras técnicas de encoding e criar features mais complexas.
